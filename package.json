@@ -1,6 +1,6 @@
 {
   "name": "matt-chat",
-  "homepage" : "http://dansbands.github.io/matt-chat",
+  "homepage" : "https://dansbands.github.io/matt-chat/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
