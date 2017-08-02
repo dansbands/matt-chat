@@ -79,7 +79,7 @@ class App extends Component {
     addMessage(e){
         e.preventDefault(); // <- prevent form submit from reloading the page
         /* Send the message to Firebase */
-        fire.database().ref('messages').push( [setNumber, this.inputOne.value, this.state.name, date] );
+        fire.database().ref('messages').push( [setNumber, this.inputOne.value, this.state.name, this.state.conversation, date] );
         this.inputOne.value = ''; // <- clear the input
     }
 
@@ -111,10 +111,11 @@ class App extends Component {
                                 { /* Render the list of messages */
                                     this.state.messages.map( message =>
                                         <li className={ this.state.name === message.text[2] ? "messageItemHome" : "messageItemAway" }
+                                            style={ this.state.conversation === message.text[3] ? null : { display: "none"}}
                                             key={message.id}>
                                             <div style={{ marginBottom: "10px", fontSize: "12px" }}>{message.text[2]}:</div>
                                             <div>{message.text[1]}</div> _______________
-                                            <div style={{ fontSize: "10px" }}>{message.text[3]}</div>
+                                            <div style={{ fontSize: "10px" }}>{message.text[4]}</div>
                                         </li> ).reverse()
                                 }
                             </ul>

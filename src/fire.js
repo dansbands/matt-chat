@@ -7,5 +7,5 @@ var config = {
     storageBucket: "matt-chat-74e7f.appspot.com",
     messagingSenderId: "821503698483"
 };
-var fire = firebase.initializeApp(config);
+export const fire = firebase.initializeApp(config);
 export default fire;
