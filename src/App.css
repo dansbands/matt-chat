@@ -1,3 +1,11 @@
+p {
+    margin: 0;
+}
+
+.lightgrey {
+    color: grey;
+}
+
 .App {
     text-align: center;
 }
@@ -12,6 +20,7 @@
     height: 50px;
     padding: 20px;
     color: white;
+    border-bottom: 3px solid darkred;
 }
 
 .App-intro {
@@ -24,10 +33,51 @@
     padding: 10px;
 }
 
+.signIn {
+    background-color: lightgrey;
+    display: inline-block;
+    margin: 10px;
+    text-align: left;
+}
+
+.joinRoom {
+    background: lightgrey;
+    display: inline-block;
+    margin: 10px;
+
+}
+
+.item {
+    display: block;
+}
+
+.status {
+    background-color: black;
+}
+
+.userNameRight {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    display: inline-block;
+    margin-left: 100px;
+
+}
+
+.userNameLeft {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    display: inline-block;
+    margin-right: 100px;
+}
+
 .conversation {
     height: 500px;
     background-color: white;
     margin: 10px;
+    padding: 10px;
+    overflow: scroll;
 
 }
 
@@ -37,9 +87,26 @@
     margin-top: 10px;
 }
 
-.messageItem {
+.messageItemHome {
     margin: 10px;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    background-color: darkred;
+    width: 50%;
+    margin-left: 45%;
 }
+
+.messageItemAway {
+    margin: 10px;
+    border: 1px solid darkred;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: lightgrey;
+    width: 50%;
+}
+
 
 .input {
     height: 100px;

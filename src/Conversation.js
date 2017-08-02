@@ -1,36 +1,31 @@
 import React from 'react';
 import './App.css';
 
-class UserName extends React.Component {
+class Conversation extends React.Component {
     constructor(props) {
         super(props);
 
         //this.state = { name: 'Your Name Here'};
 
-        this.handleUserName = this.handleUserName.bind(this);
+        this.handleConversation = this.handleConversation.bind(this);
     }
 
 
-    handleUserName = (e) => {
+    handleConversation = (e) => {
         e.preventDefault();
-        const name = e.target.value;
-        this.props.onChange(name);
-        //this.setState({ name: e.target.value });
+        const conversation = e.target.value;
+        this.props.onChange(conversation);
     };
-
 
     render() {
         return (
             <div >
 
-                <div className="signIn">
-                    <label
-                        className="item"
-                        style={{fontSize: '10px'}}>Enter User Name
-                    </label>
+                <div className="joinRoom">
+                    <label className="item" style={{fontSize: '10px'}}>Enter Name of Conversation</label>
                     <input
                         className="item"
-                        onChange={this.handleUserName}
+                        onChange={this.handleConversation}
                         type="text"
                     />
                     <input
@@ -38,6 +33,7 @@ class UserName extends React.Component {
                         type="submit"
                     />
                 </div>
+
 
             </div>
         );
@@ -47,4 +43,4 @@ class UserName extends React.Component {
 
 
 
-export default UserName;
+export default Conversation;

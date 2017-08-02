@@ -2,29 +2,39 @@
 
 Next steps:
 
-Separate messages in to Divs
+Add Auth
+Add Routing
 
 
 
 */
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import fire from './fire';
 import UserName from './UserName';
+import Status from './Status';
+import Conversation from './Conversation';
+
 
 import './App.css'
 
 let setNumber = 1;
 let date = (new Date()).toString();
 
+
+
+
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            conversation: 'Join a Conversation',
             name: 'Sign In',
             messages: []
         }; // <- set up react state
 
         this.changeName = this.changeName.bind(this);
+        this.changeConversation = this.changeConversation.bind(this);
     }
 
     componentWillMount(){
@@ -37,8 +47,19 @@ class App extends Component {
         })
     }
 
+    scrollToBottom = () => {
+        const node = ReactDOM.findDOMNode(this.messagesEnd);
+        node.scrollIntoView({ behavior: "smooth" });
+    }
+
+    componentDidMount() {
+        this.scrollToBottom();
+    }
+
     componentDidUpdate(){
-        setNumber = setNumber+1
+        setNumber = setNumber+1;
+        this.scrollToBottom();
+
     }
 
     changeName(newName) {
@@ -46,6 +67,14 @@ class App extends Component {
             name: newName
         });
     }
+
+    changeConversation(newConversation) {
+        this.setState({
+            conversation: newConversation
+        });
+    }
+
+
 
     addMessage(e){
         e.preventDefault(); // <- prevent form submit from reloading the page
@@ -63,24 +92,38 @@ class App extends Component {
                         <h2>Welcome to MattChat</h2>
                     </div>
 
-                    <UserName
+                    <Status
                         name = {this.state.name}
+                        conversation = {this.state.conversation}
+                    />
+
+                    <UserName
                         onChange = {this.changeName}
                     />
 
+                    <Conversation
+                        onChange = {this.changeConversation}
+                    />
+
                     <div className="window">
-                        <div className="conversation">
+                        <div className="conversation" >
                             <ul className="messageList">
                                 { /* Render the list of messages */
-                                    this.state.messages.map( message => <li className="messageItem" key={message.id}>{message.text[2]}: {message.text[1]} ........{message.text[3]}</li> )
+                                    this.state.messages.map( message =>
+                                        <li className={ this.state.name === message.text[2] ? "messageItemHome" : "messageItemAway" }
+                                            key={message.id}>
+                                            <div style={{ marginBottom: "10px", fontSize: "12px" }}>{message.text[2]}:</div>
+                                            <div>{message.text[1]}</div> _______________
+                                            <div style={{ fontSize: "10px" }}>{message.text[3]}</div>
+                                        </li> ).reverse()
                                 }
                             </ul>
-
-
+                            <div style={{ float:"left", clear: "both" }}
+                                 ref={(el) => { this.messagesEnd = el; }} />
                         </div>
                         <div className="input">
                             <form onSubmit={this.addMessage.bind(this)}>
-                                <input className="typeMessage" type="text" ref={ ela => this.inputOne = ela } />
+                                <input className="typeMessage" type="text" ref={ el => this.inputOne = el } />
                                 <input className="send" type="submit" value="Send"/>
 
                             </form>
@@ -94,6 +137,7 @@ class App extends Component {
                                     Sign Out
                                 </button>
                             </div>
+
                         </div>
 
                     </div>
