@@ -1,0 +1,103 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+}
+
+.App-header {
+    background-color: #222;
+    height: 50px;
+    padding: 20px;
+    color: white;
+}
+
+.App-intro {
+    font-size: large;
+}
+
+
+.window {
+    background-color: gray;
+    padding: 10px;
+}
+
+.conversation {
+    height: 500px;
+    background-color: white;
+    margin: 10px;
+
+}
+
+.messageList {
+    text-align: left;
+    list-style: none;
+    margin-top: 10px;
+}
+
+.messageItem {
+    margin: 10px;
+}
+
+.input {
+    height: 100px;
+    background-color: lightgray;
+    margin: 10px;
+
+}
+
+.typeMessage {
+    margin: 20px 5px 5px 5px;
+    height: 25px;
+    width: 200px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.send {
+    margin: 20px 5px 5px 5px;
+    height: 25px;
+    width: 50px;
+    background: dodgerblue;
+    color: white;
+    border: white;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.signOutDiv {
+    text-align: right;
+}
+
+.signOut {
+    color: white;
+    background-color: darkred;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-top: 15px;
+
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.form-control, .btn {
+    display: block;
+    margin: 10px;
+}
+
+
