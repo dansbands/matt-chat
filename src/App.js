@@ -136,16 +136,6 @@ class App extends Component {
 
                             </form>
 
-
-                            <div className="signOutDiv">
-                                <button
-                                    className="signOut"
-                                    onClick={() => this.signOut()}
-                                >
-                                    Sign Out
-                                </button>
-                            </div>
-
                         </div>
 
                     </div>
