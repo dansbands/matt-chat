@@ -82,6 +82,13 @@ p {
 
 }
 
+.chatList {
+    background: lightgrey;
+    display: inline-block;
+    margin: 10px;
+
+}
+
 .signInInput {
     width: 150px;
     -webkit-border-radius: 5px;
@@ -118,6 +125,10 @@ p {
     padding: 10px;
     display: inline-block;
     margin-right: 100px;
+}
+
+.spacer {
+    height: 200px;
 }
 
 .conversation {
@@ -296,7 +307,92 @@ body {
     }
 
     .conversation {
-        height: 350px;
+        height: 80%;
+        position: fixed;
+        bottom: 40px;
+        left: 0;
+        right: 0;
+        overflow: auto;
+        z-index: -1;
+    }
+
+    .typeMessage {
+        width: 60%;
+    }
+
+    .input {
+        bottom: 0;
+    }
+
+    .footer {
+        display: none;
+    }
+
+
+}
+
+
+@media only screen and (orientation: landscape) and (max-width: 736px) {
+
+    .App-header {
+        padding: 10px;
+        height: 40px;
+    }
+
+    .App-header-center {
+        font-size: 12px;
+    }
+
+
+    .App-header-left img {
+        height: 30px;
+        margin-top: 5px;
+        margin-left: 10px;
+    }
+
+    .status {
+        top: 63px;
+    }
+
+    .status p {
+        font-size: 9px;
+        padding: 0;
+    }
+
+    .status div {
+        margin: 0;
+    }
+
+    .userNameLeft {
+        width: 30%;
+        padding: 0;
+        text-align: left;
+    }
+
+    .userNameRight {
+        width: 60%;
+        padding: 0;
+        text-align: right;
+    }
+
+    .signIn {
+        top: 80px;
+    }
+
+    .signIn div {
+        display: inline-block;
+    }
+
+    .signInInput {
+        width: 120px;
+    }
+
+    .item {
+        font-size: 8px;
+    }
+
+    .conversation {
+        height: 55%;
         position: fixed;
         bottom: 40px;
         left: 0;

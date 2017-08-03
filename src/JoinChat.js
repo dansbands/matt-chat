@@ -1,17 +1,17 @@
 import React from 'react';
 import './App.css';
 
-class Conversation extends React.Component {
+class JoinChat extends React.Component {
     constructor(props) {
         super(props);
 
         //this.state = { name: 'Your Name Here'};
 
-        this.handleConversation = this.handleConversation.bind(this);
+        this.handleJoinChat = this.handleJoinChat.bind(this);
     }
 
 
-    handleConversation = (e) => {
+    handleJoinChat = (e) => {
         e.preventDefault();
         const conversation = e.target.value;
         this.props.onChange(conversation);
@@ -22,10 +22,10 @@ class Conversation extends React.Component {
             <div >
 
                 <div className="joinRoom">
-                    <label className="item" >Enter Name of Conversation</label>
+                    <label className="item" >Enter Name of Chat Room</label>
                     <input
                         className="signInInput"
-                        onChange={this.handleConversation}
+                        onChange={this.handleJoinChat}
                         type="text"
                     />
 
@@ -40,4 +40,4 @@ class Conversation extends React.Component {
 
 
 
-export default Conversation;
+export default JoinChat;

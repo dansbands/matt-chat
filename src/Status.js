@@ -13,7 +13,7 @@ class Status extends React.Component {
                         <p><span className="lightgrey"> Signed in as:</span> {this.props.name}</p>
                     </div>
                     <div className="userNameRight">
-                        <p><span className="lightgrey">In conversation:</span> {this.props.conversation}</p>
+                        <p><span className="lightgrey">In conversation:</span> {this.props.chatroom}</p>
                     </div>
                 </div>
 

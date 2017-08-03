@@ -13,7 +13,8 @@ import ReactDOM from 'react-dom';
 import fire from './fire';
 import UserName from './UserName';
 import Status from './Status';
-import Conversation from './Conversation';
+import JoinChat from './JoinChat';
+import ChatList from './components/ChatList';
 
 
 import './App.css'
@@ -28,13 +29,13 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            conversation: 'MattChat',
+            chatroom: 'MattChat',
             name: 'Sign In',
             messages: []
         }; // <- set up react state
 
         this.changeName = this.changeName.bind(this);
-        this.changeConversation = this.changeConversation.bind(this);
+        this.changeChatRoom = this.changeChatRoom.bind(this);
     }
 
     componentWillMount(){
@@ -68,9 +69,9 @@ class App extends Component {
         });
     }
 
-    changeConversation(newConversation) {
+    changeChatRoom(newChatRoom) {
         this.setState({
-            conversation: newConversation
+            chatroom: newChatRoom
         });
     }
 
@@ -79,7 +80,7 @@ class App extends Component {
     addMessage(e){
         e.preventDefault(); // <- prevent form submit from reloading the page
         /* Send the message to Firebase */
-        fire.database().ref('messages').push( [setNumber, this.inputOne.value, this.state.name, this.state.conversation, date] );
+        fire.database().ref('messages').push( [setNumber, this.inputOne.value, this.state.name, this.state.chatroom, date] );
         this.inputOne.value = ''; // <- clear the input
     }
 
@@ -99,26 +100,33 @@ class App extends Component {
 
                     <Status
                         name = {this.state.name}
-                        conversation = {this.state.conversation}
+                        chatroom = {this.state.chatroom}
                     />
+
                     <div className="signIn">
                         <UserName
                             onChange = {this.changeName}
                         />
 
-                        <Conversation
-                            onChange = {this.changeConversation}
+                        <JoinChat
+                            onChange = {this.changeChatRoom}
+                        />
+
+                        <ChatList
+                            onChange = {this.changeChatRoom}
+                            messages = {this.state.messages}
                         />
                     </div>
 
 
                     <div className="window">
                         <div className="conversation" >
+                            <div className="spacer" />
                             <ul className="messageList">
                                 { /* Render the list of messages */
                                     this.state.messages.map( message =>
                                         <li className={ this.state.name.toLowerCase() === message.text[2].toLowerCase() ? "messageItemHome" : "messageItemAway" }
-                                            style={ this.state.conversation.toLowerCase() === message.text[3].toLowerCase() ? null : { display: "none"}}
+                                            style={ this.state.chatroom.toLowerCase() === message.text[3].toLowerCase() ? null : { display: "none"}}
                                             key={message.id}>
                                             <div style={{ marginBottom: "10px", fontSize: "12px" }}>{message.text[2]}:</div>
                                             <div>{message.text[1]}</div> _______________
