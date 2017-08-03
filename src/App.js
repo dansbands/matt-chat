@@ -89,29 +89,36 @@ class App extends Component {
 
                 <div className="App">
                     <div className="App-header">
-                        <h2>Welcome to MattChat</h2>
+                        <div className="App-header-left">
+                            <img src={'https://matt.dule.one/images/duleone.jpg'} />
+                        </div>
+                        <div className="App-header-center">
+                            <h2 style={{ display: "inline-block", marginLeft: "50px", align: "top", top: "0" }}>Welcome to MattChat</h2>
+                        </div>
                     </div>
 
                     <Status
                         name = {this.state.name}
                         conversation = {this.state.conversation}
                     />
+                    <div className="signIn">
+                        <UserName
+                            onChange = {this.changeName}
+                        />
 
-                    <UserName
-                        onChange = {this.changeName}
-                    />
+                        <Conversation
+                            onChange = {this.changeConversation}
+                        />
+                    </div>
 
-                    <Conversation
-                        onChange = {this.changeConversation}
-                    />
 
                     <div className="window">
                         <div className="conversation" >
                             <ul className="messageList">
                                 { /* Render the list of messages */
                                     this.state.messages.map( message =>
-                                        <li className={ this.state.name === message.text[2] ? "messageItemHome" : "messageItemAway" }
-                                            style={ this.state.conversation === message.text[3] ? null : { display: "none"}}
+                                        <li className={ this.state.name.toLowerCase() === message.text[2].toLowerCase() ? "messageItemHome" : "messageItemAway" }
+                                            style={ this.state.conversation.toLowerCase() === message.text[3].toLowerCase() ? null : { display: "none"}}
                                             key={message.id}>
                                             <div style={{ marginBottom: "10px", fontSize: "12px" }}>{message.text[2]}:</div>
                                             <div>{message.text[1]}</div> _______________

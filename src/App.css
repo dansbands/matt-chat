@@ -17,10 +17,33 @@ p {
 
 .App-header {
     background-color: #222;
-    height: 50px;
     padding: 20px;
     color: white;
     border-bottom: 3px solid darkred;
+    text-align: left;
+}
+
+.App-header-left {
+    display: inline-block;
+    width: 25%;
+    text-align: left;
+}
+
+.App-header-left img {
+    height: 75px;
+    display: inline-block;
+}
+
+.App-header-center {
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    top: 0;
+    margin: 0;
+}
+
+.App-header-center h2 {
+    margin: 0;
 }
 
 .App-intro {
@@ -30,10 +53,14 @@ p {
 
 .window {
     background-color: gray;
-    padding: 10px;
+    padding: 3px;
 }
 
 .signIn {
+    background-color: lightgrey;
+}
+
+.userName {
     background-color: lightgrey;
     display: inline-block;
     margin: 10px;
@@ -47,8 +74,14 @@ p {
 
 }
 
+.signInInput {
+    width: 150px;
+}
+
 .item {
     display: block;
+    font-size: 10px;
+    text-align: left;
 }
 
 .status {
@@ -73,11 +106,11 @@ p {
 }
 
 .conversation {
-    height: 500px;
+    height: 400px;
     background-color: white;
-    margin: 10px;
     padding: 10px;
     overflow: scroll;
+    text-align: left;
 
 }
 
@@ -85,40 +118,44 @@ p {
     text-align: left;
     list-style: none;
     margin-top: 10px;
+    padding: 0;
 }
 
 .messageItemHome {
     margin: 10px;
-    border: 1px solid lightgrey;
-    border-radius: 10px;
+    border: 2px solid dimgray;
+    border-radius: 20px;
     padding: 10px;
     color: white;
     background-color: darkred;
-    width: 50%;
+    width: 45%;
     margin-left: 45%;
+    margin-right: 5%;
 }
 
 .messageItemAway {
     margin: 10px;
-    border: 1px solid darkred;
-    border-radius: 10px;
+    border: 2px solid darkred;
+    border-radius: 20px;
     padding: 10px;
     background-color: lightgrey;
-    width: 50%;
+    width: 45%;
+    margin-left: 5%;
+
 }
 
 
 .input {
     height: 100px;
     background-color: lightgray;
-    margin: 10px;
+    margin-top: 3px;
 
 }
 
 .typeMessage {
     margin: 20px 5px 5px 5px;
     height: 25px;
-    width: 200px;
+    width: 75%;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
@@ -165,6 +202,60 @@ body {
 .form-control, .btn {
     display: block;
     margin: 10px;
+}
+
+@media only screen and (max-width: 480px) {
+
+    .App-header-center {
+        font-size: 12px;
+    }
+
+    .App-header-left img {
+        height: 50px;
+    }
+
+    .status p {
+        font-size: 9px;
+        padding: 0;
+    }
+
+    .status div {
+        margin: 0;
+    }
+
+    .userNameLeft {
+        width: 30%;
+        padding: 0;
+        text-align: left;
+    }
+
+    .userNameRight {
+        width: 60%;
+        padding: 0;
+        text-align: right;
+    }
+
+    .signIn div {
+        display: inline-block;
+    }
+
+    .signInInput {
+        width: 120px;
+    }
+
+    .item {
+        font-size: 8px;
+    }
+
+    .conversation {
+        height: 250px;
+    }
+
+    .typeMessage {
+        width: 60%;
+    }
+
+
 }
 
 

@@ -22,16 +22,13 @@ class Conversation extends React.Component {
             <div >
 
                 <div className="joinRoom">
-                    <label className="item" style={{fontSize: '10px'}}>Enter Name of Conversation</label>
+                    <label className="item" >Enter Name of Conversation</label>
                     <input
-                        className="item"
+                        className="signInInput"
                         onChange={this.handleConversation}
                         type="text"
                     />
-                    <input
-                        className="item"
-                        type="submit"
-                    />
+
                 </div>
 
 

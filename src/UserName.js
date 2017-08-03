@@ -23,19 +23,14 @@ class UserName extends React.Component {
         return (
             <div >
 
-                <div className="signIn">
-                    <label
-                        className="item"
-                        style={{fontSize: '10px'}}>Enter User Name
+                <div className="userName">
+                    <label className="item">
+                        Enter User Name
                     </label>
                     <input
-                        className="item"
+                        className="signInInput"
                         onChange={this.handleUserName}
                         type="text"
-                    />
-                    <input
-                        className="item"
-                        type="submit"
                     />
                 </div>
 
