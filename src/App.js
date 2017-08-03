@@ -137,6 +137,8 @@ class App extends Component {
                             </form>
 
                         </div>
+                        <div className="footer">
+                        </div>
 
                     </div>
                 </div>
