@@ -238,12 +238,20 @@ body {
 
 @media only screen and (max-width: 480px) {
 
+    .App-header {
+        padding: 10px;
+        height: 83px;
+    }
+
     .App-header-center {
         font-size: 12px;
     }
 
+
     .App-header-left img {
         height: 50px;
+        margin-top: 20px;
+        margin-left: 10px;
     }
 
     .status {

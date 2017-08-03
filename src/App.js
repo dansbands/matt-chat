@@ -28,7 +28,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            conversation: 'Join a Conversation',
+            conversation: 'MattChat',
             name: 'Sign In',
             messages: []
         }; // <- set up react state
