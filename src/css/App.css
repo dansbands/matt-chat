@@ -79,6 +79,7 @@ p {
     background: lightgrey;
     display: inline-block;
     margin: 10px;
+    margin-right: 30px;
 
 }
 
@@ -86,7 +87,12 @@ p {
     background: lightgrey;
     display: inline-block;
     margin: 10px;
+    margin-left: 30px;
 
+}
+
+.signIn div {
+    display: inline-block;
 }
 
 .signInInput {
@@ -321,10 +327,12 @@ body {
 
     .chatList {
         margin-left: 20px;
+        border-radius: 5px;
     }
 
     #great-names {
         width: 100px;
+        background: white;
     }
 
     .conversation {

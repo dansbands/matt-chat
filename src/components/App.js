@@ -3,6 +3,7 @@
 Next steps:
 
 Add profile, ability to add name, picture/ avatar
+Create uniform style on all pages
 
 x Add Auth
 x Add Routing
