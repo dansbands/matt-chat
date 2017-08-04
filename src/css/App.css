@@ -138,7 +138,7 @@ p {
     overflow: scroll;
     text-align: left;
     position: fixed;
-    bottom: 140px;
+    bottom: 160px;
     right: 0;
     left: 0;
     z-index: -1;
@@ -176,7 +176,7 @@ p {
 
 
 .input {
-    height: 40px;
+    height: 80px;
     background-color: lightgray;
     position: fixed;
     bottom: 100px;
@@ -236,6 +236,14 @@ p {
 
 }
 
+.btn-danger {
+    background-color: darkred;
+    color: white;
+    border: 2px solid black;
+    border-radius: 3px;
+    z-index: 10;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -267,6 +275,7 @@ body {
 
     .status {
         top: 106px;
+        height: 30px;
     }
 
     .status p {
@@ -279,19 +288,19 @@ body {
     }
 
     .userNameLeft {
-        width: 30%;
+        width: 45%;
         padding: 0;
         text-align: left;
     }
 
     .userNameRight {
-        width: 60%;
+        width: 45%;
         padding: 0;
         text-align: right;
     }
 
     .signIn {
-        top: 124px;
+        top: 136px;
     }
 
     .signIn div {
@@ -299,17 +308,29 @@ body {
     }
 
     .signInInput {
-        width: 120px;
+        width: 100px;
     }
 
     .item {
         font-size: 8px;
     }
 
+    .joinRoom {
+        margin-right: 20px;
+    }
+
+    .chatList {
+        margin-left: 20px;
+    }
+
+    #great-names {
+        width: 100px;
+    }
+
     .conversation {
         height: 80%;
         position: fixed;
-        bottom: 40px;
+        bottom: 80px;
         left: 0;
         right: 0;
         overflow: auto;
@@ -352,6 +373,7 @@ body {
 
     .status {
         top: 63px;
+        height: 30px;
     }
 
     .status p {
@@ -364,13 +386,13 @@ body {
     }
 
     .userNameLeft {
-        width: 30%;
+        width: 50%;
         padding: 0;
         text-align: left;
     }
 
     .userNameRight {
-        width: 60%;
+        width: 40%;
         padding: 0;
         text-align: right;
     }

@@ -20,7 +20,7 @@ class ChatList extends Component {
     render() {
         return (
             <div className="chatList">
-                <label className="item">Choose a Existing Chat</label>
+                <label className="item">Choose an Existing Chat</label>
                 <select
                     id="great-names"
                     onChange={this.handleJoinChat}>

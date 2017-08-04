@@ -2,22 +2,24 @@
 
 Next steps:
 
-Add Auth
-Add Routing
+Add profile, ability to add name, picture/ avatar
+
+x Add Auth
+x Add Routing
 
 
 
 */
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import fire from './fire';
-import UserName from './UserName';
+import { connect } from 'react-redux';
+import fire from '../fire';
 import Status from './Status';
 import JoinChat from './JoinChat';
-import ChatList from './components/ChatList';
+import ChatList from './ChatList';
 
 
-import './App.css'
+import '../css/App.css'
 
 let setNumber = 1;
 let date = (new Date()).toString();
@@ -30,12 +32,27 @@ class App extends Component {
         super(props);
         this.state = {
             chatroom: 'MattChat',
-            name: 'Sign In',
+            name: (fire.auth().currentUser && fire.auth().currentUser.email) || '',
             messages: []
         }; // <- set up react state
 
+        if (!fire.auth().currentUser) {
+                        fire.auth().onAuthStateChanged(user => user && this.updateName(user.email));
+                }
+
         this.changeName = this.changeName.bind(this);
         this.changeChatRoom = this.changeChatRoom.bind(this);
+    }
+
+
+    updateName(name) {
+            this.setState({name});
+    }
+
+
+
+    signOut() {
+        fire.auth().signOut();
     }
 
     componentWillMount(){
@@ -104,9 +121,6 @@ class App extends Component {
                     />
 
                     <div className="signIn">
-                        <UserName
-                            onChange = {this.changeName}
-                        />
 
                         <JoinChat
                             onChange = {this.changeChatRoom}
@@ -141,10 +155,17 @@ class App extends Component {
                             <form onSubmit={this.addMessage.bind(this)}>
                                 <input className="typeMessage" type="text" ref={ el => this.inputOne = el } />
                                 <input className="send" type="submit" value="Send"/>
-
+                                <button
+                                    className="btn btn-danger"
+                                    onClick={() => this.signOut()}
+                                >
+                                    Sign Out
+                                </button>
                             </form>
 
+
                         </div>
+
                         <div className="footer">
                         </div>
 
@@ -156,7 +177,12 @@ class App extends Component {
     }
 }
 
-export default App;
+function mapStateToProps(state) {
+    console.log('state', state);
+    return {}
+}
+
+export default connect(mapStateToProps, null)(App);
 
 
 /*
