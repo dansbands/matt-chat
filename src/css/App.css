@@ -25,6 +25,7 @@ p {
     top: 0;
     left: 0;
     right: 0;
+    z-index: 1;
 }
 
 .App-header-left {
@@ -44,11 +45,90 @@ p {
     text-align: center;
     top: 0;
     margin: 0;
+    vertical-align: 140%;
 }
 
 .App-header-center h2 {
     margin: 0;
+    margin-left: "50px",
 }
+
+.App-header-right {
+    display: inline-block;
+    color: white;
+    right: 0;
+    top: 0;
+    margin-left: 10%;
+    vertical-align: top;
+    position: fixed;
+}
+
+.show {
+    height: 500px;
+    background-color: black;
+    width: 300px;
+    z-index: -1;
+}
+
+.hide {
+    display: none;
+}
+
+.hamburger {
+    margin-top: 10px;
+    z-index: 3;
+}
+
+.hamburger p {
+    text-align: right;
+    margin-right: 20px;
+    font-size: 8px;
+}
+
+.menuContainer {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.menu {
+    margin-top: 100px;
+    margin-right: 30px;
+    margin-left: 80px;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0px;
+    margin-top: 60px;
+}
+
+.menu li {
+    margin-top: 20px;
+    font-weight: 300;
+}
+
+.signOut {
+    color: white;
+    border-top: 1px solid white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.signOutBtn {
+    border: none;
+    background: none;
+    font-size: inherit;
+    color: white;
+}
+
+
+
 
 .App-intro {
     font-size: large;
@@ -91,6 +171,10 @@ p {
 
 }
 
+.signIn {
+    z-index: 0;
+}
+
 .signIn div {
     display: inline-block;
 }
@@ -111,9 +195,10 @@ p {
 .status {
     background-color: black;
     position: fixed;
-    top: 124px;
+    top: 122px;
     left: 0;
     right: 0;
+    z-index: 0;
 }
 
 .userNameRight {
@@ -144,7 +229,7 @@ p {
     overflow: scroll;
     text-align: left;
     position: fixed;
-    bottom: 160px;
+    bottom: 150px;
     right: 0;
     left: 0;
     z-index: -1;
@@ -182,7 +267,7 @@ p {
 
 
 .input {
-    height: 80px;
+    height: 50px;
     background-color: lightgray;
     position: fixed;
     bottom: 100px;
@@ -226,15 +311,6 @@ p {
     text-align: right;
 }
 
-.signOut {
-    color: white;
-    background-color: darkred;
-    border: none;
-    border-radius: 5px;
-    margin-right: 10px;
-    margin-top: 15px;
-
-}
 
 .link {
     text-decoration: none;
@@ -250,37 +326,73 @@ p {
     z-index: 10;
 }
 
+.btn-primary {
+    background-color: darkred;
+    color: white;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
 body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-.form-control, .btn {
+.form-control {
+    border: 1px solid lightgrey;
+}
+
+.form-control {
     display: block;
     margin: 10px;
 }
+
+.form-inline {
+    margin-left: 30%;
+    margin-top: 200px;
+}
+
+.form-inline h2 {
+    color: #222;
+}
+
+.signLink {
+    color: #222;
+    text-decoration: none;
+}
+
+
 
 @media only screen and (max-width: 480px) {
 
     .App-header {
         padding: 10px;
-        height: 83px;
+        height: 30px;
     }
 
     .App-header-center {
-        font-size: 12px;
+        font-size: 9px;
+        width: 60%;
+    }
+
+    .App-header-center h2 {
+        margin-left: 10px;
+    }
+
+    .App-header-left {
+        width: 15%;
     }
 
 
     .App-header-left img {
-        height: 50px;
-        margin-top: 20px;
-        margin-left: 10px;
+        height: 25px;
+        margin-top: 5px;
+        margin-left: 5px;
     }
 
     .status {
-        top: 106px;
+        top: 53px;
         height: 30px;
     }
 
@@ -292,6 +404,7 @@ body {
     .status div {
         margin: 0;
     }
+
 
     .userNameLeft {
         width: 45%;
@@ -306,11 +419,15 @@ body {
     }
 
     .signIn {
-        top: 136px;
+        top: 83px;
     }
 
     .signIn div {
         display: inline-block;
+    }
+
+    .already {
+        width: 60%
     }
 
     .signInInput {
@@ -338,7 +455,7 @@ body {
     .conversation {
         height: 80%;
         position: fixed;
-        bottom: 80px;
+        bottom: 50px;
         left: 0;
         right: 0;
         overflow: auto;
@@ -443,6 +560,9 @@ body {
         display: none;
     }
 
+    .form-inline {
+        margin-top: 100px;
+    }
 
 }
 

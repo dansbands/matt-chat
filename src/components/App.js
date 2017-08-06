@@ -3,7 +3,9 @@
 Next steps:
 
 Add profile, ability to add name, picture/ avatar
-Create uniform style on all pages
+Margins on sign-in/up
+
+x Create uniform style on all pages
 
 x Add Auth
 x Add Routing
@@ -18,7 +20,7 @@ import fire from '../fire';
 import Status from './Status';
 import JoinChat from './JoinChat';
 import ChatList from './ChatList';
-
+import Header from './Header';
 
 import '../css/App.css'
 
@@ -52,9 +54,7 @@ class App extends Component {
 
 
 
-    signOut() {
-        fire.auth().signOut();
-    }
+
 
     componentWillMount(){
         /* Create reference to messages in Firebase Database */
@@ -105,16 +105,9 @@ class App extends Component {
     render() {
         return (
             <div>
-
                 <div className="App">
-                    <div className="App-header">
-                        <div className="App-header-left">
-                            <img src={'https://matt.dule.one/images/duleone.jpg'} />
-                        </div>
-                        <div className="App-header-center">
-                            <h2 style={{ display: "inline-block", marginLeft: "50px", align: "top", top: "0" }}>Welcome to MattChat</h2>
-                        </div>
-                    </div>
+
+                    <Header onClick={this.signOut}/>
 
                     <Status
                         name = {this.state.name}
@@ -122,7 +115,6 @@ class App extends Component {
                     />
 
                     <div className="signIn">
-
                         <JoinChat
                             onChange = {this.changeChatRoom}
                         />
@@ -156,12 +148,6 @@ class App extends Component {
                             <form onSubmit={this.addMessage.bind(this)}>
                                 <input className="typeMessage" type="text" ref={ el => this.inputOne = el } />
                                 <input className="send" type="submit" value="Send"/>
-                                <button
-                                    className="btn btn-danger"
-                                    onClick={() => this.signOut()}
-                                >
-                                    Sign Out
-                                </button>
                             </form>
 
 
