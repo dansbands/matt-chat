@@ -57,10 +57,12 @@ class Header extends React.Component {
 
 
                     <div className={this.state.menuClass}>
-                        <div>
+                        <div className="profilePic"></div>
+                        <div className="profileInfo">
                             <img className="profile" src={duleone} style={{height: "30px", borderRadius: "15px" }}/>
                             <p className="profile" >{this.props.name}</p>
                         </div>
+
 
                         <div className="menu">
                             <ul>

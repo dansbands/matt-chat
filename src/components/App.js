@@ -2,8 +2,12 @@
 
 Next steps:
 
+Hide hamburger on sign in
+Animate hamburger and slide-in menu
 Add profile, ability to add name, picture/ avatar
-Margins on sign-in/up
+
+
+x Margins on sign-in/up
 
 x Create uniform style on all pages
 
