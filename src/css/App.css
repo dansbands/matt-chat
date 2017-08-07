@@ -350,6 +350,7 @@ p {
     background: white;
     border-radius: 20px;
     border: 1px solid darkred;
+    -webkit-appearance: none;
 }
 
 .footer {
