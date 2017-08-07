@@ -107,7 +107,10 @@ class App extends Component {
             <div>
                 <div className="App">
 
-                    <Header onClick={this.signOut}/>
+                    <Header
+                        onClick={this.signOut}
+                        name={this.state.name}
+                    />
 
                     <Status
                         name = {this.state.name}
@@ -146,7 +149,7 @@ class App extends Component {
                         </div>
                         <div className="input">
                             <form onSubmit={this.addMessage.bind(this)}>
-                                <input className="typeMessage" type="text" ref={ el => this.inputOne = el } />
+                                <input className="typeMessage" type="text" placeholder="Type your text here..." ref={ el => this.inputOne = el } />
                                 <input className="send" type="submit" value="Send"/>
                             </form>
 

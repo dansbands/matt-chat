@@ -45,16 +45,16 @@ class SignIn extends Component {
                             placeholder="password"
                             onChange={event => this.setState({password: event.target.value})}
                         />
-                        <button
-                            className="btn btn-primary"
+                        <p
+                            className="signLink1"
                             type="button"
                             onClick={() => this.signIn()}
                         >
                             Sign In
-                        </button>
+                        </p>
+                        <div>{this.state.error.message}</div>
                     </div>
-                    <div>{this.state.error.message}</div>
-                    <div><Link className="signLink" to={'/signup'}>Sign up instead</Link></div>
+                    <div className="ready" ><Link className="signLink" to={'/signup'}>Sign up instead</Link></div>
                 </div>
 
             </div>

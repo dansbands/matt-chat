@@ -1,5 +1,7 @@
 import React from 'react';
 import fire from '../fire';
+import duleone from '../img/duleone.jpg';
+import Menu from '../img/Menu.svg';
 
 let click = 1;
 
@@ -31,11 +33,12 @@ class Header extends React.Component {
     render () {
         return (
             <div className="App-header">
+                <div className="App-header-background" ></div>
                 <div className="App-header-left">
-                    <img src={'https://matt.dule.one/images/duleone.jpg'} />
+                    <img src={duleone} />
                 </div>
                 <div className="App-header-center">
-                    <h2 style={{ display: "inline-block", align: "top", top: "0" }}>Welcome to MattChat</h2>
+                    <h2 style={{ display: "inline-block", align: "top", top: "0" }}>MattChat</h2>
                 </div>
 
 
@@ -47,14 +50,18 @@ class Header extends React.Component {
                             className="hamburger"
                             onClick={this.toggleMenu}
                         >
-                            <p>______</p>
-                            <p>______</p>
-                            <p>______</p>
+
+                            <img src={Menu}/>
                         </div>
                     </div>
 
 
                     <div className={this.state.menuClass}>
+                        <div>
+                            <img className="profile" src={duleone} style={{height: "30px", borderRadius: "15px" }}/>
+                            <p className="profile" >{this.props.name}</p>
+                        </div>
+
                         <div className="menu">
                             <ul>
                                 <li>Profile</li>

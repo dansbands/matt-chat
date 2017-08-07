@@ -2,22 +2,6 @@ p {
     margin: 0;
 }
 
-.signIn input[type=text], select {
-
-    border: 0;
-    border-bottom: 2px solid #ccc;
-    border-radius: 0;
-}
-
-.input input[type=text], select {
-
-    border: 0;
-    border-bottom: 2px solid #ccc;
-    border-radius: 0;
-
-
-}
-
 .lightgrey {
     color: grey;
 }
@@ -44,24 +28,9 @@ p {
     z-index: 1;
 }
 
-.App-header-background {
-    background: url(../img/duleone.jpg) center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-
-    height: 118px;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    opacity: .5;
-    z-index: -1;
-}
-
 .App-header-left {
     display: inline-block;
-    width: 15%;
+    width: 25%;
     text-align: left;
 }
 
@@ -72,7 +41,7 @@ p {
 
 .App-header-center {
     display: inline-block;
-    width: 70%;
+    width: 50%;
     text-align: center;
     top: 0;
     margin: 0;
@@ -80,7 +49,8 @@ p {
 }
 
 .App-header-center h2 {
-    margin: 0 auto;
+    margin: 0;
+    margin-left: "50px",
 }
 
 .App-header-right {
@@ -113,12 +83,10 @@ p {
     z-index: 3;
 }
 
-.hamburger img {
+.hamburger p {
     text-align: right;
     margin-right: 20px;
-    margin-top: 8px;
     font-size: 8px;
-    height: 15px;
 }
 
 .menuContainer {
@@ -180,8 +148,8 @@ p {
 }
 
 .signIn {
-    background-color: white;
-    border-bottom: 1px solid rgba(0,0,0, .3);
+    background-color: lightgrey;
+    border-bottom: 1px solid black;
     position: fixed;
     top: 158px;
     left: 0;
@@ -196,6 +164,7 @@ p {
 }
 
 .joinRoom {
+    background: lightgrey;
     display: inline-block;
     margin: 10px;
     margin-right: 30px;
@@ -203,11 +172,13 @@ p {
 }
 
 .chatList {
+    background: lightgrey;
     display: inline-block;
     margin: 10px;
     margin-left: 30px;
 
 }
+
 
 
 .signIn div {
@@ -287,7 +258,6 @@ p {
     width: 45%;
     margin-left: 45%;
     margin-right: 5%;
-    text-overflow: ellipsis;
 }
 
 .messageItemAway {
@@ -304,12 +274,11 @@ p {
 
 .input {
     height: 50px;
-    background-color: white;
+    background-color: lightgray;
     position: fixed;
     bottom: 100px;
     left: 0;
     right: 0;
-    border-top: 2px solid rgba(0,0,0,.2);
 
 }
 
@@ -326,10 +295,12 @@ p {
     margin: 5px 5px 5px 5px;
     height: 25px;
     width: 50px;
-    color: darkred;
-    background: white;
-    border-radius: 20px;
-    border: 1px solid darkred;
+    background: #222;
+    color: white;
+    border: 2px solid darkred;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 
 .footer {
@@ -372,17 +343,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    font-weight: 100;
-}
-
-h1, h2, h3, p {
-    font-weight: 100;
-}
-
-.form-group {
-    margin-bottom: 40px;
-    height: 160px;
-
 }
 
 .form-control {
@@ -391,47 +351,22 @@ h1, h2, h3, p {
 
 .form-control {
     display: block;
-    margin: 30px auto;
-    border: 0;
-    border-bottom: 1px solid black;
-
+    margin: 10px;
 }
 
 .form-inline {
-    margin-left: 15%;
+    margin-left: 30%;
     margin-top: 200px;
-    text-align: center;
-    width: 70%;
 }
 
 .form-inline h2 {
     color: #222;
 }
 
-.signLink1 {
-    color: white;
-    padding: 10px 30px;
-    background-color: darkred;
-    text-decoration: none;
-    border-radius: 20px;
-    width: 100px;
-    margin: 0 auto;
-}
-
 .signLink {
-    color: white;
-    padding: 20px 20px;
-    background-color: black;
+    color: #222;
     text-decoration: none;
-    margin: 78px auto 0 auto;
-
 }
-
-.ready {
-    margin: 88px auto 0;
-    width: 156px;
-}
-
 
 
 
@@ -442,15 +377,14 @@ h1, h2, h3, p {
         height: 30px;
     }
 
-    .App-header-background {
-        height: 50px;
-    }
-
     .App-header-center {
         font-size: 9px;
-        width: 70%;
+        width: 60%;
     }
 
+    .App-header-center h2 {
+        margin-left: 10px;
+    }
 
     .App-header-left {
         width: 15%;
@@ -499,24 +433,11 @@ h1, h2, h3, p {
     }
 
     .already {
-        width: 156px;
-        margin: 0 auto;
-    }
-
-    .already p {
-        margin-bottom: 30px;
-    }
-
-    .form-inline {
-        margin-top: 130px;
+        width: 60%
     }
 
     .signInInput {
         width: 100px;
-    }
-
-    .signLink {
-        margin-top: 78px;
     }
 
     .item {
