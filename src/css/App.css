@@ -556,6 +556,7 @@ h1, h2, h3, p {
     #great-names {
         width: 100px;
         background: white;
+        -webkit-appearance: none;
     }
 
     .conversation {
